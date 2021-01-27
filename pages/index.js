@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import Router from 'next/router';
 
 export default function Home({ zones }) {
   const select = useRef(null);
 
   function handleOnSubmit(e) {
-    console.log(select.current.value);
+    const value = select.current.value;
+
+    Router.push(`/zone/${value}`)
     e.preventDefault();
   }
 
@@ -16,7 +19,7 @@ export default function Home({ zones }) {
             return <option value={el.id} key={el.id}>{el.name}</option>
           }) }
         </select>
-        <input type="submit" value="Salva" />
+        <input type="submit" value="Cosa esce domani?" />
       </form>
     </div>
   )
