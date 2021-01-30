@@ -2,13 +2,14 @@ import { add, format } from 'date-fns';
 const rp = require('request-promise');
 const cheerio = require('cheerio');
 const dateFormat = 'dd-MM-yyyy';
-// const url = 'https://contarina.it/cittadino/raccolta-differenziata/eco-calendario';
-const url = 'http://localhost:8000';
+const url = process.env.WHICHBIN_SCRAPE_URL;
 
 export default async function(selector) {
     const today = new Date();
     const tomorrow = add(today, {days: 1});
     const tomorrowString = format(tomorrow, dateFormat);
+
+    console.log(url);
 
     return new Promise((resolve, reject) => {
         rp(url)
