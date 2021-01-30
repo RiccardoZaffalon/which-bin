@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   const [zone, setZone] = useState(0);
 
   useEffect(() => {
-    const defaultZone = JSON.parse(window.localStorage.getItem("zone"));
+    const defaultZone = window.localStorage.getItem("zone");
 
     if (defaultZone) {
       setZone(defaultZone);

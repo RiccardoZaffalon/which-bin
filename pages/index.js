@@ -17,7 +17,7 @@ export default function Home({ zones }) {
     <div className="bins">
       <form onSubmit={handleOnSubmit}>
         <select value={zone} onChange={(e) => setZone(e.target.value)}>
-          <option value={null}>Seleziona la tua zona</option>
+          <option value="">Seleziona la tua zona</option>
           {zones.map((el, i) => {
             return (
               <option value={el.id} key={el.id}>
@@ -26,7 +26,7 @@ export default function Home({ zones }) {
             );
           })}
         </select>
-        <input type="submit" value="Cosa esce domani?" />
+        <input type="submit" value="Cosa esce domani?" disabled={!zone} />
       </form>
     </div>
   );
