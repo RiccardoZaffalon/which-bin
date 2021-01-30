@@ -9,8 +9,6 @@ export default async function(selector) {
     const tomorrow = add(today, {days: 1});
     const tomorrowString = format(tomorrow, dateFormat);
 
-    console.log(url);
-
     return new Promise((resolve, reject) => {
         rp(url)
             .then(function(html){

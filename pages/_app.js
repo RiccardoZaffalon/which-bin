@@ -2,8 +2,23 @@ import { useState, useEffect } from "react";
 import { blue } from "tailwindcss/colors";
 import Link from "next/link";
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from 'nprogress';
+
 import Context from "../context/zone";
 import "../styles/globals.scss";
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+}
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+}
+
+Router.onRouteChangeError = () => {
+  NProgress.done();
+}
 
 function MyApp({ Component, pageProps }) {
   const [zone, setZone] = useState(0);
