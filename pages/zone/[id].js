@@ -1,4 +1,3 @@
-import Link from "next/link";
 import scrape from "../../helpers/scrape";
 import { getZoneNameById } from "../../helpers/zones";
 
@@ -25,9 +24,6 @@ function NoBins() {
 export default function Bins({ bins, zoneName }) {
   return (
     <>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
       <h3>
         Zona: <strong>{zoneName}</strong>
       </h3>
