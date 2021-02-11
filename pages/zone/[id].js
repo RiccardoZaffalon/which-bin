@@ -1,7 +1,7 @@
 import scrape from "../../helpers/scrape";
 import { getZoneNameById } from "../../helpers/zones";
 
-function List(bins) {
+function List({bins}) {
   return (
     <>
       <h4>Domani esce:</h4>
@@ -21,7 +21,7 @@ function NoBins() {
   );
 }
 
-export default function Bins({ bins, zoneName }) {
+export default function Zone({ bins, zoneName }) {
   return (
     <>
       <h3>
